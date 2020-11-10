@@ -1,0 +1,120 @@
+```javascript
+// States
+let todos = [];
+let navState = 'all';
+
+//DOMs
+const $nav = document.querySelector('.nav');
+const $inputTodo = document.querySelector('.input-todo');
+const $todos = document.querySelector('.todos');
+const $completedTodos = document.querySelector('.completed-todos');
+const $activeTodos = document.querySelector('.active-todos');
+const $completeAll = document.querySelector('.complete-all');
+const $clearCompleted = document.querySelector('.clear-completed');
+
+const generateNextId = () => (todos.length ? Math.max(...todos.map(todo => todo.id)) + 1 : 1);
+
+const render = () => {
+  let html = '';
+  const _todos = todos.filter(todo => (navState === 'completed' ? todo.completed : navState === 'active' ? !todo.completed : true));
+  _todos.forEach(({ id, content, completed }) => {
+    html += `<li id="${id}" class="todo-item">
+      <input id="ck-${id}" class="checkbox" type="checkbox" ${completed ? 'checked' : ''}>
+      <label for="ck-${id}">${content}</label>
+      <i class="remove-todo far fa-times-circle"></i>
+    </li>`;
+  });
+  $todos.innerHTML = html;
+  $completedTodos.textContent = todos.filter(todo => todo.completed).length;
+  $activeTodos.textContent = todos.filter(todo => !todo.completed).length;
+};
+
+const fetchTodos = () => {
+  fetch('/todos')
+    .then(res => res.json())
+    .then(_todos => { todos = _todos; })
+    .then(render)
+    .catch(console.error);
+};
+
+window.onload = fetchTodos;
+
+//입력
+$inputTodo.onkeyup = ({ key }) => {
+  if (key !== 'Enter') return;
+  const content = $inputTodo.value;
+  const newTodo = { id: generateNextId(), content, completed: false };
+  fetch('/todos', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(newTodo)
+  })
+    .then(res => res.json())
+    .then(_todos => { todos = _todos; })
+    .then(render)
+    .catch(console.error);
+  
+  $inputTodo.value='';
+  $inputTodo.focus();
+};
+
+//All, Active, Completed 각 클릭하면 css이동
+$nav.onclick = ({ target }) => {
+  if (!target.matches('.nav > li')) return;
+  document.querySelector('.active').classList.remove('active');
+  target.classList.add('active');
+  navState = target.id;
+  render();
+};
+
+//개별 체크
+$todos.onchange= e => {
+  const {id} = e.target.parentNode;
+  console.log({id});
+  fetch(`/todos/${id}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({completed: e.target.checked})
+  })
+    .then(res => res.json()) // JSON.parse() 와 같은,,!
+    .then(_todos => todos = _todos)
+    .then(render)
+    .catch(console.error)
+}
+
+//전체 체크
+$completeAll.onchange = e => {
+  console.log(e.target.checked);
+  fetch('/todos/completed', {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({completed: e.target.checked})
+  })
+    .then(res => res.json())
+    .then(_todos => todos = _todos)
+    .then(render)
+    .catch(console.error)
+}
+
+//전체 삭제
+$clearCompleted.onclick=e=>{
+  fetch('/todos/completed',{
+    method:'DELETE'})
+    .then(res=>res.json())
+    .then(_todos=>todos=_todos)
+    .then(render)
+    .catch(console.error)
+}
+
+//개별 삭제
+$todos.onclick= e => {
+  if (!e.target.matches('.todos>li>i')) return;
+  const {id} = e.target.parentNode;
+  fetch(`/todos/${id}`,{
+    method:'DELETE'})
+    .then(res=>res.json())
+    .then(_todos=>todos=_todos)
+    .then(render)
+    .catch(console.error)
+}
+```
