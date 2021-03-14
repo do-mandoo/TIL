@@ -19,4 +19,4 @@ ETC
 ---
 RubberDuck-JS
 - 1
-  - <a href="./JS-READMEs/RubberDuck/HTTP_Cokie&Storage_Diff.md">HttpCookie와Storage차이</a>
+  - <a href="./JS-READMEs/RubberDuck/HTTP_Cookie%26Storage_Diff.md">HttpCookie와Storage차이</a>
