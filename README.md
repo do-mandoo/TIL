@@ -26,9 +26,9 @@ REACT
 ---
 ETC
 - Algorithm(알고리즘)
-  - <a htref = "Algorithm/1.md">짝수와 홀수</a>
+  - <a href = "Algorithm/1.md">짝수와 홀수</a>
   - <a href = "Algorithm/2.md">1~10,000숫자들에서 8이 등장하는 횟수는?(Google기출)</a>
-  - <a href = "Algorithm/3.md">문자열 다루기</a>문자열 다루기
+  - <a href = "Algorithm/3.md">문자열 다루기</a>
 ---
 JS-RubberDuck
 - 1주차
