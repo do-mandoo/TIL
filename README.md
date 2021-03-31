@@ -33,12 +33,16 @@ ETC
 JS-RubberDuck
 - 1주차
   - <a href="./JS-READMEs/RubberDuck-JS/1.HTTP_Cookie%26Storage_Diff.md">HttpCookie와Storage차이</a>
+  - <a href="./JS-READMEs/RubberDuck-JS/1.Promise(비동기).md">Promise(비동기)</a>
 - 2주차
   - <a href="./JS-READMEs/RubberDuck-JS/2.Closure.md">Closure</a>
   - <a href="JS-READMEs/RubberDuck-JS/2.class%2Cfunctional_Component_Diff.md">클래스컴포넌트와 함수컴포넌트의 차이와 라이프사이클 차이</a>
 - 3주차
   - <a href="./JS-READMEs/RubberDuck-JS/3.브라우저의렌더링과정.md">브라우저의 렌더링 과정</a>
   - <a href="./JS-READMEs/RubberDuck-JS/3.WebProtocols.md">웹 프로토콜(WebProtocol)</a>
+- 4주차
+  - <a href="./JS-READMEs/RubberDuck-JS/4.원시값과참조값의차이(메모리관점).md">메모리관점에서의 원시값과 참조값의 차이</a>
+  - <a href="./JS-READMEs/RubberDuck-JS/4.restAPI와graphQL.md">rest API와 graph QL</a>
 
 TS-RubberDuck
 - 1주차
