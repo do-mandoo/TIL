@@ -1,4 +1,4 @@
-# TIL
+a# TIL
 ---
 ### 매일 조금씩 채워나가는 지식.
 ---
@@ -43,6 +43,9 @@ JS-RubberDuck
 - 4주차
   - <a href="./JS-READMEs/RubberDuck-JS/4.원시값과참조값의차이(메모리관점).md">메모리관점에서의 원시값과 참조값의 차이</a>
   - <a href="./JS-READMEs/RubberDuck-JS/4.restAPI와graphQL.md">rest API와 graph QL</a>
+- 5주차
+  - <a href="./JS-READMEs/RubberDuck-JS/5.웹컴포넌트.md">웹 컴포넌트 </a>
+  - <a href="./JS-READMEs/RubberDuck-JS/5.This.md">This</a>
 
 TS-RubberDuck
 - 1주차
