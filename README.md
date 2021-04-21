@@ -46,7 +46,19 @@ JS-RubberDuck
 - 5주차
   - <a href="./JS-READMEs/RubberDuck-JS/5.웹컴포넌트.md">웹 컴포넌트 </a>
   - <a href="./JS-READMEs/RubberDuck-JS/5.This.md">This</a>
-
+- 6주차
+  - <a>호이스팅, 실행 컨텍스트</a>
+  - <a>[useCallback, useMemo, useEffect]의존성 위주</a>
+- 7주차
+  - <a>React에서 Key의 동작 방식</a>
+- 8주차
+  - <a>react.memo</a>
 TS-RubberDuck
 - 1주차
 - 2주차
+- 3주차
+- 4주차
+- 5주차
+- 6주차
+- 7주차
+- 8주차
