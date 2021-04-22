@@ -23,6 +23,9 @@ JAVASCRIPT
 ---
 REACT
 - 1
+REACT-RubberDuck
+- <a href="">JS 6주차 - [useCallback, useMemo, useEffect]의존성 위주</a>
+- <a href="">JS 7주차 - react.memo</a>
 ---
 ETC
 - Algorithm(알고리즘)
@@ -33,9 +36,9 @@ ETC
 JS-RubberDuck
 - 1주차
   - <a href="./JS-READMEs/RubberDuck-JS/1.HTTP_Cookie%26Storage_Diff.md">HttpCookie와Storage차이</a>
-  - <a href="./JS-READMEs/RubberDuck-JS/1.Promise(비동기).md">Promise(비동기)</a>
+  - <a href="./JS-READMEs/RubberDuck-JS/1.Promise(비동기).md">프로미스 Promise(비동기)</a>
 - 2주차
-  - <a href="./JS-READMEs/RubberDuck-JS/2.Closure.md">Closure</a>
+  - <a href="./JS-READMEs/RubberDuck-JS/2.Closure.md">클로저 Closure</a>
   - <a href="JS-READMEs/RubberDuck-JS/2.class%2Cfunctional_Component_Diff.md">클래스컴포넌트와 함수컴포넌트의 차이와 라이프사이클 차이</a>
 - 3주차
   - <a href="./JS-READMEs/RubberDuck-JS/3.브라우저의렌더링과정.md">브라우저의 렌더링 과정</a>
@@ -47,12 +50,13 @@ JS-RubberDuck
   - <a href="./JS-READMEs/RubberDuck-JS/5.웹컴포넌트.md">웹 컴포넌트 </a>
   - <a href="./JS-READMEs/RubberDuck-JS/5.This.md">This</a>
 - 6주차
-  - <a>호이스팅, 실행 컨텍스트</a>
-  - <a>[useCallback, useMemo, useEffect]의존성 위주</a>
+  - <a href="./JS-READMEs/RubberDuck-JS/6.호이스팅%2C실행컨텍스트.md">호이스팅, 실행 컨텍스트</a>, <a href="./JS-READMEs/RubberDuck-JS/8.실행컨텍스트%20연장선(클로저%2C스코프).md">실행 컨텍스트 클로저 스코프 연결</a>
+  - <a href="/React/RubberDuck-React/6.useEffect%2CuseMemo%2CuseCallback.md">[useCallback, useMemo, useEffect]의존성 위주</a>
 - 7주차
-  - <a>React에서 Key의 동작 방식</a>
+  - <a href="./React/RubberDuck-React/7.react-key동작방식.md">React에서 Key의 동작 방식</a>
 - 8주차
   - <a>react.memo</a>
+---
 TS-RubberDuck
 - 1주차
 - 2주차
