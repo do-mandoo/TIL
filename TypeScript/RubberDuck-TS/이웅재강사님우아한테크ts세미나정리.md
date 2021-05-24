@@ -20,7 +20,7 @@
       } 
       console.log(f2(10)); // 380
       console.log(f2('Kim')); // NaN
-
+      --- //retrun타입 명시안함.
       function f3(a){ // 타입스크립트의 추론에 의지하는 경우
         return a * 38;
       }
@@ -44,7 +44,8 @@
       console.log(f4(5)); // 190
       console.log(f4(-5) + 5); // NaN => 음수면 retrun 타입이 undefined라서, undefined + 5 가 된다. 
       ```
-    - `stricNullChecks` 옵션을 true지정 => 모든 타입에 자동으로 포함되어 있는 'null'과 'undefined'를 제거해준다.
+        - run타임과 compile타임에 타입이 다르다.
+    - `stricNullChecks` 옵션을 true지정 => 모든 타입에 자동으로 포함되어 있는 'null'과 'undefined'를 제거해준다. 그래서 run타임과 complie타임에 타입이 달라지지 않는다.
       ```javascript
       function f4(a:number){ // stricNullChecks옵션 활성화.
         if(a>0){
@@ -163,7 +164,7 @@
     type PersonList = string[];
     /*interface*/
     interface IPersonList {
-      {index:number}: string; // index는 number, 요소 type은 string
+      [index:number]: string; // index는 number, 요소 type은 string
     }
     ```
   - intersection
@@ -206,7 +207,7 @@
     class Pet implements PetType {} // error TS2422: type alias를 class가 구현하는 것은 불가능하다.
     ```
   - Declaration Merging - interface
-    - 기본적으로 선언을 머지할 수 있는 기능은 interface에서 제공함.
+    - **기본적** 으로 선언을 머지할 수 있는 기능은 **interface에서 제공함.**
       ```javascript
       interface MergingInterface {
         a: string;
@@ -219,7 +220,7 @@
       let mi: MergingInterface;
       mi.
       ```
-  - Declaration Merging - type alias
+  - Declaration Merging - type alias 에서 머지 안됨!.
     - type alias에서는 같은 이름으로 선언한것은 머지하지 않음.
       ```javascript
       type MergingType = {
@@ -229,17 +230,41 @@
         b: string;
       };
       ```
-  - 강사님은 type alias를 주로 '타입 별칭'으로 받아들여서 이미 있는 타입 이름을 바꾸거나, 인터섹션이나 유니온 한 타입의 이름을 지정할 때 사용한다. interface는 주로 새로운 타입을 만들어낼때 사용한다. 차이점은 위에서 살펴본 머지등의 기능을 제공하느냐 안하느냐.
+  - 강사님은 type alias를 '타입 별칭'으로 받아들여서 주로 이미 있는 타입 이름을 바꾸거나, 인터섹션이나 유니온 한 타입의 이름을 지정할 때 사용한다. interface는 주로 새로운 타입을 만들어낼때 사용한다. 차이점은 위에서 살펴본 머지등의 기능을 제공하느냐 안하느냐.
 
-### 서브 타입과 슈퍼 타입
+### 서브 타입과 슈퍼 타입 (6장 고급 타입)
+  - 집합의 관계에서 포함되는것을 서브타입이라한다.
   - 공변
     ```javascript
     let sub1 : 1 = 1; // sub1은 리터럴값 1이다.
     let super1: number = sub1; // sub1의 리터럴 값 1은 숫자이므로, super1에 정의한 number에 부합하여 할당될 수 있다.
     sub1 = super1; // error! 그렇지만, super1를 sub1에 할당할 수 없다. sub1은 서브타입이고, super1은 슈퍼타입이기 때문이다.
+
+    let sub2 : [number, number] = [1,2]; // tuple
+    let super2 : number[] = sub2; // ok
+    // or let super2 : object = sub2; // ok : tuple의 슈퍼타입은 array이고, array의 슈퍼타입은 object이기 때문.
+
+    // 깍두기 같은 존재의 any.
+    let sub3: number = 1;
+    let super3: any = sub3; 
+    sub4 = super3; // any는 모든 타입의 슈퍼타입임.
+
+    // never
+    let sub4: never = 0 as never;
+    let super4: number = sub4; // never는 모든타입의 서브타입이므로 가능.
+    sub4 = super4; // error
+
+    // class문법
+    class SubAnimal{}
+    class SubDog extends SubAnimal{
+      eat(){}
+    }
+    let sub5:SubDog = new SubDog();
+    let super5:SubAnimal = sub5;
+    sub5 = super5; // error
     ```
   - 같거나 서브타입인 경우, 할당이 가능하다.=> 공변 
-  - 함수의 매개변수 타입만 같거나 슈퍼타입인 경우, 할당이 가능하다.=>반병
+  - 함수의 매개변수 타입만 같거나 슈퍼타입인 경우, 할당이 가능하다.=> 반병
   - `strictFunctionTypes` 옵션 true지정 => 함수의 매개변수 타입만 같거나 슈퍼타입인 경우가 아닐 경우에 에러를 통해 경고한다.
   - `any` 대신 `unknown` 사용.
 
@@ -274,8 +299,8 @@
     });
     ```
 
-### type guard로 안전함을 파악하기(꽃)
-  - 보통 Primitive 타입일 경우
+### type guard로 안전함을 파악하기(꽃)(6장 고급 타입)
+  - 보통 Primitive 타입일 경우 Typeof
     ```javascript
     function getNumber(value:number|string):number{
       value; // number|string
@@ -351,6 +376,7 @@
       }
     }
 
+    // 위의 만들기 불편한 user is admin 조건을 
     // in operator를 사용해서 아래와 같이 조건분기 해준다.
     function redirect2(user: Admin | User) {
       if("role" in user) {
@@ -378,7 +404,7 @@
 
     // redux에서 reducer의 구조와 비슷
     function getWheelOrMotor(machine: Car | Boat): number {
-      if (machine.type === 'CAR') {
+      if (machine.type === 'CAR') { // redux의 action.type과 비슷.
         return machine.wheel;
       } else {
         return machine.motor;
@@ -463,7 +489,7 @@
         }
       }
       ```
-    - 그렇지만 여전히 생성자를 벗어나면 추론되지 않는다. 그래서 !로 의도를 표현해야 한다.
+    - 그렇지만 여전히 생성자를 벗어나면 추론되지 않는다. 그래서 *!로 의도를 표현* 해야 한다.
     ```javascript
     class Square7 {
       sideLength!: number; // ! 로 의도를 표현해야 한다. === constructor에서는 초기화가 되지 않지만, 어디선가는 초기화가 number로 될것이다라는 의도.
@@ -484,7 +510,7 @@
     ```
 
 ## 2부 실전 타입스크립트 코드 작성하기
-### conditional type을 활용하기
+### conditional type을 활용하기 // 6장 고급타입-조건부타입, 분배적 조건부
   - Item<T> - T에 따라 달라지는 container
     ```javascript
     interface StringContainer {
@@ -516,12 +542,12 @@
     };
     // tem<T> - T 가 string 이면 StringContainer, T 가 number 면 NumberContainer, 면 사용 불가
     type Item3<T> = {
-      id: T extends string | number ? T : never;
+      id: T extends string | number ? T : never; // never를 사용함으로써 사용불가를 맡음.
       container: T extends string
         ? StringContainer
         : T extends number
         ? NumberContainer
-        : never;
+        : never; // 사용불가를 맡음.
     };
     const item3: Item3<boolean> = {
       id: true, // Type 'boolean' is not assignable to type 'never'.
@@ -564,64 +590,68 @@
     ```
   - Flatten<T>
     ```javascript
-    type Flatten<T> = T extends any[]
-      ? T[number]
-      : T extends object
-      ? T[keyof T]
-      : T;
+    type Flatten<T> = T extends any[]? T[number] : T extends object ? [keyof T] : T ;
+    // T가 배열이면? T[number]이런 모양으로 리턴할꺼고 : 아니고 만약에 T가 object면? [keyof T]로 리털할꺼고 : 그것도 아니면 T를 리턴할꺼다.
+    // 그냥 T만 리턴이 되려면, 배열도, object도 아니어야한다.
 
-    const numbers = [1, 2, 3];
-    type NumbersArrayFlattened = Flatten<typeof numbers>;
+    const numbers = [1,2,3,4,5];
+    type NumbersArrayFalttened = Flatten<typeof numbers>;
     // 1. number[]
-    // 2. number
+    // 2. number // 만약 const numbers = [1,'hello',2]; 였다면 number|string으로 나옴.
 
     const person = {
-      name: 'Mark',
-      age: 38
+        name:"Kim",
+        age:20
     };
-                                
-    type SomeObjectFlattened = Flatten<typeof person>;
-    // 1. keyof T --> "id" | "name"
-    // 2. T["id" | "name"] --> T["id"] | T["name"] --> number | string
+    type SomeObjectFalttened = Flatten<typeof person>;
+    // 1. keyof T -> "name"|"age"
+    // 2. T["name"|"age"] -> T["name"] | T["age"] -> string|number
 
     const isMale = true;
-    type SomeBooleanFlattened = Flatten<typeof isMale>;
+    type SomeBooleanFalttened = Flatten<typeof isMale>;
     // true
     ```
-  - **infer**  <infer K> === K를 추론한다.
+  - **infer**  <infer K> === K를 추론한다. 
     ```javascript
-    // promise의 return값이 배열인 경우, 그 배열요소의 타입, 아니면 any 타입
+    // promise의 return값이 배열인 경우? 그 배열요소의 타입 K: 아니면 any 타입
     type UnpackPromise<T> = T extends Promise<infer K>[] ? K : any;
     const promises = [Promise.resolve('Mark'), Promise.resolve(38)]; // (string|number)[]
 
     type Expected = UnpackPromise<typeof promises>; // string | number
     ```
-  - 함수의 리턴 타입 알아내기 - my return type
+  - 함수의 리턴 타입 알아내기 - my return type *어려워ㅠ*
     ```javascript
     function plus1(seed: number): number {
       return seed + 1;
     }
 
     // (...args: any) => any 는 함수라는 뜻임.
-    // <T `extends (...args: any) => any` 중 이 제약 사항의 의미는 함수여야 된다.> = T extends()
+    // <T `extends (...args: any) => any` 中 이 제약 사항의 의미는 함수여야 된다.> = T extends()
+    // T 가 함수면 T의 리턴타입을 infer하겠다는 것. 리턴타입을 infer해서 걔를 R로 꺼낸다. 그 R을 사용하겠다. R로 추론해서 사용하겠다.
     type MyReturnType<T extends (...args: any) => any> = T extends (
       ...args: any
     ) => infer R ? R : any;
+    // ) => infer R //위의 함수 plus1의 return을 number로 타입어노테이션 함. return을 R로 추론함.
+    //   ? R // 따라서 아래 type Id= //...에서 Id는 number가 됨.
+    //   : any;
 
-    // typeof는 런타임에서는 어떠한 것의 타입을 값으로 반환하지만, 컴파일 타임에서는 다르다. 컴파일시에는 plus1의 타입스크립트 타이핑을 얻어내는 역할이다.
-    type Id = MyReturnType<typeof plus1>;
+    // typeof는 런타임에서는 *어떠한 것의 타입을 값으로 반환* 하지만, 컴파일 타임에서는 다르다. 컴파일시에는 *plus1의 타입스크립트 타이핑을 얻어내는 역할* 이다. 
+    // typeof plus1 에 위에서 정의한 함수 plus1형태를 넣은 것.
+    type Id = MyReturnType<typeof plus1>; // MyReturnType의 제약사항이 함수니까 함수형태에 부합해서 통과함. , Id는 number가 됨.
     lookupEntity(plus1(10));
 
     function lookupEntity(id: Id) {
       // query DB for entity by ID
     }
     ```
-  - 내장 conditional types (1)
+  - 내장 conditional types (1) *중요* // 6장 고급 타입 - 내장 조건부 타입
     ```javascript
     // type Exclude<T, U> = T extends U ? never : T;
+    // T에는 속하지만 U에는 없는 타입을 구한다. like without
     type Excluded = Exclude<string | number, string>; // number - diff
 
     // type Extract<T, U> = T extends U ? T : never;
+    // T의 타입 중 U에 할당할 수 있는 타입을 구한다.
     type Extracted = Extract<string | number, string>; // string - filter
 
     // Pick<T, Exclude<keyof T, K>>; (Mapped Type)
@@ -631,11 +661,15 @@
     type Omited = Omit<{name: string, age: number}, 'name'>; // -> name만 없는 객체 타입
 
     // type NonNullable<T> = T extends null | undefined ? never : T;
+    // T에서  null과 undefined를 제외한 버전을 구한다.
     type NonNullabled = NonNullable<string | number | null | undefined>; // string|number
+    // 예제
+    type A = {a?:number |null};
+    type B = NonNullable<A['a']> // number
     ```
   - 내장 conditional types (2)
     ```javascript
-    // 함수의 return 타입을 타입으로
+    // 함수의 return 타입을 타입으로. 함수의 반환타입을 구한다(제네릭과 오버로드된 함수에서는 동작하지 않는다).
     type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => infer R ? R : any;
 
     // 함수의 매개변수 타입을 타입으로
@@ -658,7 +692,8 @@
     ```
   - Function 인 프로퍼티 찾기 - 어떠한 인터페이스안에 들어있는 함수 프로퍼티 찾는법.
     ```javascript
-        type FunctionPropertyNames<T> = {
+    // mapped Type사용.
+    type FunctionPropertyNames<T> = {
       [K in keyof T]: T[K] extends Function ? K : never;
     }[keyof T]; // 함수 프로퍼티만 뽑아내기
     type FunctionProperties<T> = Pick<T, FunctionPropertyNames<T>>;
@@ -692,8 +727,8 @@
       return value.sort(() => Math.random() - 0.5);
     }
 
-    console.log(shuffle('Hello, Mark!')); // string | any[]
-    console.log(shuffle(['Hello', 'Mark', 'long', 'time', 'no', 'see'])); // string | any[]
+    console.log(shuffle('Hello, Kim!')); // string | any[]
+    console.log(shuffle(['Hello', 'Kim', 'long', 'time', 'no', 'see'])); // string | any[]
     console.log(shuffle([1, 2, 3, 4, 5])); // string | any[]
     ```
   - 제네릭을 떠올리자! => conditional type활용
@@ -711,10 +746,10 @@
     }
 
     // function shuffle2<"Hello, Mark!">(value: "Hello, Mark!"): string
-    shuffle2('Hello, Mark!');
+    shuffle2('Hello, Kim!');
 
     // function shuffle2<string[]>(value: string[]): string[]
-    shuffle2(['Hello', 'Mark', 'long', 'time', 'no', 'see']);
+    shuffle2(['Hello', 'Kim', 'long', 'time', 'no', 'see']);
 
     // function shuffle2<number[]>(value: number[]): number[]
     shuffle2([1, 2, 3, 4, 5]);
@@ -731,8 +766,8 @@
       return value.sort(() => Math.random() - 0.5);
     }
 
-    shuffle3('Hello, Mark!');
-    shuffle3(['Hello', 'Mark', 'long', 'time', 'no', 'see']);
+    shuffle3('Hello, Kim!');
+    shuffle3(['Hello', 'Kim', 'long', 'time', 'no', 'see']);
     shuffle3([1, 2, 3, 4, 5]);
     ```
     - ts의 오버로딩은 런타임에서 사용하는 오버로딩이 아니고, ts의 타입처리만 도와주는 오버로딩이다. 따라서 (1),(2)를 제외하고는 나머지는 런타임에 제대로 동작해야한다. 런타임에 처리되는 부분은 개발자가 알아서 해야한다.
@@ -812,7 +847,7 @@
     weekdays[0]; // readonly string[]
     weekdays[0] = 'Fancyday'; // error! Index signature in type 'readonly string[]' only permits reading.
     ```
-  - as const
+  - as const 
     ```javascript
     const weekdays = [
       'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'
@@ -867,12 +902,12 @@
     pnp = { name: undefined, age: null };
     ---
 
-    // Make all properties in T optional
+    // T의 모든 속성을 optional하게 바꿔줌
     type Partial<T> = {
         [P in keyof T]?: T[P];
     };
 
-    // Make all properties in T required
+    // T의 모든 속성을 필수로 설정
     type Required<T> = {
         [P in keyof T]-?: T[P];
     };
@@ -1040,3 +1075,4 @@
     ```
 ### never 활용하기
   - 중요. 조건문할때 좋다
+  - 에러처리 방법 중 하나?일까?
