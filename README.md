@@ -1,4 +1,4 @@
-a# TIL
+# TIL
 ---
 ### 매일 조금씩 채워나가는 지식.
 ---
@@ -23,9 +23,6 @@ JAVASCRIPT
 ---
 REACT
 - 1
-REACT-RubberDuck
-- <a href="">JS 6주차 - [useCallback, useMemo, useEffect]의존성 위주</a>
-- <a href="">JS 7주차 - react.memo</a>
 ---
 ETC
 - Algorithm(알고리즘)
@@ -55,14 +52,26 @@ JS-RubberDuck
 - 7주차
   - <a href="./React/RubberDuck-React/7.react-key동작방식.md">React에서 Key의 동작 방식</a>
 - 8주차
-  - <a>react.memo</a>
+  - <a href="./React/RubberDuck-React/8.react-memo.md">react.memo</a>
+- 9주차
+  - <a>함수형 프로그래밍 기법 Currying</a>
+- 10주차
+  - <a href="#"></a>
+- 11주차
+  - <a hrtf="JS-READMEs/RubberDuck-JS/11.CSR%2CSSR.md">CSR, SSR</a>
+- 12주차
+  - <a href="#">디자인 패턴 Design pattern</a>
+- 13주차
+  - <a href="./JS-READMEs/RubberDuck-JS/13.class.md">Class</a>
+---
+REACT-RubberDuck
+- <a href="">JS 6주차 - [useCallback, useMemo, useEffect]의존성 위주</a>
+- <a href=".//React/RubberDuck-React/7.react-key동작방식.md">JS 7주차 - React에서 Key의 동작 방식</a>
+- <a href="./React/RubberDuck-React/8.react-memo.md">JS 8주차 - react.memo</a>
+- <a>JS 10주차 - useReducer, useContext</a>
 ---
 TS-RubberDuck
-- 1주차
-- 2주차
-- 3주차
-- 4주차
-- 5주차
-- 6주차
-- 7주차
-- 8주차
+- <a href="/TypeScript/RubberDuck-TS/이웅재강사님우아한테크ts세미나정리.md">웅재강사님우아한테크ts세미나정리</a>
+- <a href="/TypeScript/RubberDuck-TS/5장.md">5장</a>
+- <a href="/TypeScript/RubberDuck-TS/6장.md">6장</a>
+
