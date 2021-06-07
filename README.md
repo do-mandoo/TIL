@@ -56,11 +56,11 @@ JS-RubberDuck
 - 9주차
   - <a>함수형 프로그래밍 기법 Currying</a>
 - 10주차
-  - <a href="#"></a>
+  - <a>useReducer, useContext</a>
 - 11주차
-  - <a hrtf="JS-READMEs/RubberDuck-JS/11.CSR%2CSSR.md">CSR, SSR</a>
+  - <a hrtf="./JS-READMEs/RubberDuck-JS/11.CSR%2CSSR.md">CSR, SSR</a>
 - 12주차
-  - <a href="#">디자인 패턴 Design pattern</a>
+  - <a href="./JS-READMEs/RubberDuck-JS/12.디자인패턴.md">디자인 패턴 Design pattern</a>
 - 13주차
   - <a href="./JS-READMEs/RubberDuck-JS/13.class.md">Class</a>
 ---
