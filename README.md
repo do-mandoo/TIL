@@ -63,6 +63,10 @@ JS-RubberDuck
   - <a href="./JS-READMEs/RubberDuck-JS/12.디자인패턴.md">디자인 패턴 Design pattern</a>
 - 13주차
   - <a href="./JS-READMEs/RubberDuck-JS/13.class.md">Class</a>
+- 14주차
+  - <a href="./JS-READMEs/RubberDuck-JS/14.JS데코레이터.md">데코레이터 함수 Decorator</a>
+- 15주차
+  - <a href="./JS-READMEs/RubberDuck-JS/15.history객체.md">hitory객체</a>
 ---
 REACT-RubberDuck
 - <a href="">JS 6주차 - [useCallback, useMemo, useEffect]의존성 위주</a>
