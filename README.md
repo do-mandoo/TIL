@@ -30,7 +30,10 @@ ETC
   - <a href = "Algorithm/2.md">1~10,000숫자들에서 8이 등장하는 횟수는?(Google기출)</a>
   - <a href = "Algorithm/3.md">문자열 다루기</a>
 ---
-JS-RubberDuck
+### RubberDuck스터디(js,react,ts)
+<br/>
+
+JavaScript-RubberDuck
 - 1주차
   - <a href="./JS-READMEs/RubberDuck-JS/1.HTTP_Cookie%26Storage_Diff.md">HttpCookie와Storage차이</a>
   - <a href="./JS-READMEs/RubberDuck-JS/1.Promise(비동기).md">프로미스 Promise(비동기)</a>
@@ -54,7 +57,7 @@ JS-RubberDuck
 - 8주차
   - <a href="./React/RubberDuck-React/8.react-memo.md">react.memo</a>
 - 9주차
-  - <a>함수형 프로그래밍 기법 Currying</a>
+  - <a href="./JS-READMEs/RubberDuck-JS/9.currying.md">함수형 프로그래밍 기법 Currying</a>
 - 10주차
   - <a>useReducer, useContext</a>
 - 11주차
@@ -67,16 +70,35 @@ JS-RubberDuck
   - <a href="./JS-READMEs/RubberDuck-JS/14.JS데코레이터.md">데코레이터 함수 Decorator</a>
 - 15주차
   - <a href="./JS-READMEs/RubberDuck-JS/15.history객체.md">hitory객체</a>
----
+- 16주차?
+  - <a>함수형,클래스형 내부 구현차이</a>
+  - <a href="./JS-READMEs/RubberDuck-JS/16.CustomHooks.md">customHooks</a>
+- 17주차?
+  - <a href="./JS-READMEs/RubberDuck-JS/17.SOLID원칙.md">SOLID원칙</a>
+
+<br/>
+
 REACT-RubberDuck
-- <a href="">JS 6주차 - [useCallback, useMemo, useEffect]의존성 위주</a>
-- <a href=".//React/RubberDuck-React/7.react-key동작방식.md">JS 7주차 - React에서 Key의 동작 방식</a>
-- <a href="./React/RubberDuck-React/8.react-memo.md">JS 8주차 - react.memo</a>
-- <a>JS 10주차 - useReducer, useContext</a>
----
-TS-RubberDuck
+- JS 6주차
+  - <a href="./React/RubberDuck-React/6.useEffect%2CuseMemo%2CuseCallback.md">[useCallback, useMemo, useEffect]의존성 위주</a>
+- JS 7주차
+  - <a href="./React/RubberDuck-React/7.react-key동작방식.md">React에서 Key의 동작 방식</a>
+- JS 8주차
+  - <a href="./React/RubberDuck-React/8.react-memo.md">react.memo</a>
+- JS 10주차
+  - <a href="">useReducer, useContext</a>
+- JS 18주차
+  - <a href="./React/RubberDuck-React/18.TDD.md">TDD</a>
+  - <a href="./React/RubberDuck-React/18.VirtualDom.md">VirtualDOM</a>
+- 19주차
+  - <a href="React/RubberDuck-React/19.React에서%20SEO.md">React에서 SEO</a>
+  - <a>CI/CD</a>
+
+<br/>
+
+TypeScript-RubberDuck
 - <a href="/TypeScript/RubberDuck-TS/이웅재강사님우아한테크ts세미나정리.md">웅재강사님우아한테크ts세미나정리</a>
-- <a href="/TypeScript/RubberDuck-TS/5장.md">5장</a>
-- <a href="/TypeScript/RubberDuck-TS/6장.md">6장</a>
-dfdf
+- <a href="/TypeScript/RubberDuck-TS/5장.md">ts교재 5장</a>
+- <a href="/TypeScript/RubberDuck-TS/6장.md">ts교재 6장</a>
+- dfdf
 
