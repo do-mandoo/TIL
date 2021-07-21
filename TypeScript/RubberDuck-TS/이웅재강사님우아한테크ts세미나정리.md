@@ -687,6 +687,7 @@
     /* type ConstructorParameters< T extends new (...args: any) => any > = T extends new (...args: infer P) => any ? P : never; */
     type MyConstructorParameters = ConstructorParameters<Constructor>; // [name: string, age: number]
 
+    // 클래스 생성자의 인스턴스 타입을 구한다.
     /* type InstanceType<T extends new (...args: any) => any> = T extends new (...args: any) => infer R ? R : any; */
     type MyInstanceType = InstanceType<Constructor>; // string
     ```
