@@ -35,46 +35,46 @@ ETC
 
 JavaScript-RubberDuck
 - 1주차
-  - <a href="./JS-READMEs/RubberDuck-JS/1.HTTP_Cookie%26Storage_Diff.md">HttpCookie와Storage차이</a>
-  - <a href="./JS-READMEs/RubberDuck-JS/1.Promise(비동기).md">프로미스 Promise(비동기)</a>
+  - <a href="./JavaScript/RubberDuck-JS/1.HTTP_Cookie%26Storage_Diff.md">HttpCookie와Storage차이</a>
+  - <a href="./JavaScript/RubberDuck-JS/1.Promise(비동기).md">프로미스 Promise(비동기)</a>
 - 2주차
-  - <a href="./JS-READMEs/RubberDuck-JS/2.Closure.md">클로저 Closure</a>
-  - <a href="JS-READMEs/RubberDuck-JS/2.class%2Cfunctional_Component_Diff.md">클래스컴포넌트와 함수컴포넌트의 차이와 라이프사이클 차이</a>
+  - <a href="./JavaScript/RubberDuck-JS/2.Closure.md">클로저 Closure</a>
+  - <a href="JavaScript/RubberDuck-JS/2.class%2Cfunctional_Component_Diff.md">클래스컴포넌트와 함수컴포넌트의 차이와 라이프사이클 차이</a>
 - 3주차
-  - <a href="./JS-READMEs/RubberDuck-JS/3.브라우저의렌더링과정.md">브라우저의 렌더링 과정</a>
-  - <a href="./JS-READMEs/RubberDuck-JS/3.WebProtocols.md">웹 프로토콜(WebProtocol)</a>
+  - <a href="./JavaScript/RubberDuck-JS/3.브라우저의렌더링과정.md">브라우저의 렌더링 과정</a>
+  - <a href="./JavaScript/RubberDuck-JS/3.WebProtocols.md">웹 프로토콜(WebProtocol)</a>
 - 4주차
-  - <a href="./JS-READMEs/RubberDuck-JS/4.원시값과참조값의차이(메모리관점).md">메모리관점에서의 원시값과 참조값의 차이</a>
-  - <a href="./JS-READMEs/RubberDuck-JS/4.restAPI와graphQL.md">rest API와 graph QL</a>
+  - <a href="./JavaScript/RubberDuck-JS/4.원시값과참조값의차이(메모리관점).md">메모리관점에서의 원시값과 참조값의 차이</a>
+  - <a href="./JavaScript/RubberDuck-JS/4.restAPI와graphQL.md">rest API와 graph QL</a>
 - 5주차
-  - <a href="./JS-READMEs/RubberDuck-JS/5.웹컴포넌트.md">웹 컴포넌트 </a>
-  - <a href="./JS-READMEs/RubberDuck-JS/5.This.md">This</a>
+  - <a href="./JavaScript/RubberDuck-JS/5.웹컴포넌트.md">웹 컴포넌트 </a>
+  - <a href="./JavaScript/RubberDuck-JS/5.This.md">This</a>
 - 6주차
-  - <a href="./JS-READMEs/RubberDuck-JS/6.호이스팅%2C실행컨텍스트.md">호이스팅, 실행 컨텍스트</a>, <a href="./JS-READMEs/RubberDuck-JS/8.실행컨텍스트%20연장선(클로저%2C스코프).md">실행 컨텍스트 클로저 스코프 연결</a>
+  - <a href="./JavaScript/RubberDuck-JS/6.호이스팅%2C실행컨텍스트.md">호이스팅, 실행 컨텍스트</a>, <a href="./JavaScript/RubberDuck-JS/8.실행컨텍스트%20연장선(클로저%2C스코프).md">실행 컨텍스트 클로저 스코프 연결</a>
   - <a href="/React/RubberDuck-React/6.useEffect%2CuseMemo%2CuseCallback.md">[useCallback, useMemo, useEffect]의존성 위주</a>
 - 7주차
   - <a href="./React/RubberDuck-React/7.react-key동작방식.md">React에서 Key의 동작 방식</a>
 - 8주차
   - <a href="./React/RubberDuck-React/8.react-memo.md">react.memo</a>
 - 9주차
-  - <a href="./JS-READMEs/RubberDuck-JS/9.currying.md">함수형 프로그래밍 기법 Currying</a>
+  - <a href="./JavaScript/RubberDuck-JS/9.currying.md">함수형 프로그래밍 기법 Currying</a>
 - 10주차
   - <a>useReducer, useContext</a>
 - 11주차
-  - <a hrtf="./JS-READMEs/RubberDuck-JS/11.CSR%2CSSR.md">CSR, SSR</a>
+  - <a hrtf="./JavaScript/RubberDuck-JS/11.CSR%2CSSR.md">CSR, SSR</a>
 - 12주차
-  - <a href="./JS-READMEs/RubberDuck-JS/12.디자인패턴.md">디자인 패턴 Design pattern</a>
+  - <a href="./JavaScript/RubberDuck-JS/12.디자인패턴.md">디자인 패턴 Design pattern</a>
 - 13주차
-  - <a href="./JS-READMEs/RubberDuck-JS/13.class.md">Class</a>
+  - <a href="./JavaScript/RubberDuck-JS/13.class.md">Class</a>
 - 14주차
-  - <a href="./JS-READMEs/RubberDuck-JS/14.JS데코레이터.md">데코레이터 함수 Decorator</a>
+  - <a href="./JavaScript/RubberDuck-JS/14.JS데코레이터.md">데코레이터 함수 Decorator</a>
 - 15주차
-  - <a href="./JS-READMEs/RubberDuck-JS/15.history객체.md">hitory객체</a>
+  - <a href="./JavaScript/RubberDuck-JS/15.history객체.md">hitory객체</a>
 - 16주차?
   - <a>함수형,클래스형 내부 구현차이</a>
-  - <a href="./JS-READMEs/RubberDuck-JS/16.CustomHooks.md">customHooks</a>
+  - <a href="./JavaScript/RubberDuck-JS/16.CustomHooks.md">customHooks</a>
 - 17주차?
-  - <a href="./JS-READMEs/RubberDuck-JS/17.SOLID원칙.md">SOLID원칙</a>
+  - <a href="./JavaScript/RubberDuck-JS/17.SOLID원칙.md">SOLID원칙</a>
 
 <br/>
 
